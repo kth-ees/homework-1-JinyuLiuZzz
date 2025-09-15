@@ -3,6 +3,8 @@ module count_1 (
   output logic [2:0] out
 );
   // …
-  // Add your description here
+  always_comb begin
+    out = a[0] + a[1] + a[2] + a[3];
+  end
   // …
 endmodule

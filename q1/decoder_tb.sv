@@ -9,6 +9,14 @@ module decoder_tb;
     .binary(binary),
     .one_hot(one_hot)
   );
-
+  initial begin
+    // Test all possible binary inputs
+    for (int i = 0; i < 16; i++) begin
+      binary = i;
+      #10; // Wait for some time to observe the output
+      $display("binary: %0d, one_hot: %b", binary, one_hot);
+    end
+    $finish;
+  end
   // Complete your testbench here
 endmodule
